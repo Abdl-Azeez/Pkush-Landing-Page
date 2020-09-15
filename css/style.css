@@ -511,6 +511,12 @@ h5,
   border-radius: 10px;
   color: #eee;
 }
+@media(max-width: 450px){
+  .site-navbar.scrolled .site-navigation .site-menu>li>a.nav-button{
+    font-weight: bold;
+    text-shadow: none;
+  }
+}
 .site-navbar .site-navigation .site-menu .has-children {
   position: relative;
 }
@@ -1040,6 +1046,14 @@ form.search-box .input-form {
   width: 53%;
   position: relative;
   overflow: hidden;
+}
+@media(max-width: 450px){
+  form.search-box .input-form {
+    width: auto !important;
+  }
+  form.search-box .search-form a .hide{
+    display: none;
+  }
 }
 form.search-box .input-form input {
   height: 60px;
