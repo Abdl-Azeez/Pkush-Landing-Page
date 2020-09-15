@@ -714,6 +714,11 @@ h5,
     text-shadow: none;
 
 }
+@media (max-width: 300px){
+  .navMobile{
+    max-width: 76% !important;
+  }
+}
 .site-mobile-menu {
   width: 300px;
   position: fixed;
@@ -1049,10 +1054,13 @@ form.search-box .input-form {
 }
 @media(max-width: 450px){
   form.search-box .input-form {
-    width: auto !important;
+    width: 70% !important;
   }
   form.search-box .search-form a .hide{
     display: none;
+  }
+  form.search-box .search-form {
+    width: 30% !important;
   }
 }
 form.search-box .input-form input {
