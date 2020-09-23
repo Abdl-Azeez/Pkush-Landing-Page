@@ -1106,9 +1106,10 @@ h5,
     justify-content: center;
   }
   .BookNow a {
-    position: absolute;
-    /* right: auto !important;
+    /* position: absolute;
+    right: auto !important;
     top: 75%; */
+    position: fixed;
     padding: 18px !important;
     left: 0;
     bottom: 0;
