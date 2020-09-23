@@ -1107,8 +1107,12 @@ h5,
   }
   .BookNow a {
     position: absolute;
-    right: auto !important;
-    top: 75%;
+    /* right: auto !important;
+    top: 75%; */
+
+    left: 0;
+    bottom: 0;
+    top: auto;
   }
 }
 form.search-box {
