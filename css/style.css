@@ -1599,7 +1599,7 @@ form.search-box .search-form a {
   transform: translateX(-50%);
 }
 
-@media (max-screen: 720px) {
+@media (max-width: 720px) {
   .block-13 .owl-nav,
   .slide-one-item .owl-nav {
     bottom: -69px;
