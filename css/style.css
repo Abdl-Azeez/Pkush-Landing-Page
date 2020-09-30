@@ -2066,6 +2066,11 @@ form.search-box .search-form a {
   display: block;
   width: 100%;
 }
+@media (max-width: 900px) {
+  .unit-1 .unit-1-text {
+    bottom: 30px !important;
+  }
+}
 
 .unit-1 .unit-1-text .unit-1-heading {
   font-size: 1.5rem;
