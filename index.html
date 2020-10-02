@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
@@ -195,9 +195,9 @@
                 <!-- <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt praesentium dicta
                   consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.</p> -->
                 <ul class="ul-check list-unstyled success">
-                  <li class="text-white">Error minus sint nobis dolor</li>
-                  <li class="text-white">Voluptatum porro expedita labore esse</li>
-                  <li class="text-white">Voluptas unde sit pariatur earum</li>
+                  <li class="text-white">You're required to choose your preffered payment method</li>
+                  <li class="text-white">Key in all neccesary info, then click "Next" button to confirm</li>
+                  <li class="text-white">Upon successful payment, your tracking ID and receipt will be sent to email provided </li>
                 </ul>
               </div>
             </div>
@@ -211,7 +211,7 @@
                 <!-- <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt praesentium dicta
                   consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.</p> -->
                 <ul class="ul-check list-unstyled success">
-                  <li class="text-white">Copy your order ID from your receipt </li>
+                  <li class="text-white">Copy your tracking/order ID from your receipt </li>
                   <li class="text-white">Key in or paste the ID in the input field above</li>
                   <li class="text-white">Then click on the "Track & Trace" button</li>
                 </ul>
@@ -652,17 +652,17 @@ staff, committed to there professions</p>
 
 
 
-            <form action="#" class="p-5 bg-white">
+            <form action="#" class="p-5 bg-white" method="post" id="ContactForm" novalidate="novalidate"  onsubmit="return ContactForm();">
 
-
+              <input type='hidden' name='form-name' value='my-form' />
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
+                  <input type="text" id="fname" name="fname" class="form-control" required>
                 </div>
                 <div class="col-md-6">
                   <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
+                  <input type="text" id="lname" name="lname" class="form-control">
                 </div>
               </div>
 
@@ -670,7 +670,14 @@ staff, committed to there professions</p>
 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label>
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" id="email" name="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="number">Mobile Number</label>
+                  <input type="text" id="number" name="number" class="form-control">
                 </div>
               </div>
 
@@ -685,7 +692,7 @@ staff, committed to there professions</p>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="message">Message</label>
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                  <textarea name="message" id="message" name="message" cols="30" rows="7" class="form-control"></textarea>
                 </div>
               </div>
 
@@ -715,8 +722,6 @@ staff, committed to there professions</p>
             <div class="p-4 mb-3 bg-white">
               <h3 class="h5 text-black mb-3">More Info</h3>
               <p class="text-justify">
-
-
                 At P'kush Logistics, compromise is not acceptable, and our
                 employees are provided a consistent and comprehensive
                 training program in order to meet the highest possible standards
@@ -726,7 +731,7 @@ staff, committed to there professions</p>
                 to enhance your reputation.
                 We will take care of your package and deliver it safe and on time
               </p>
-              <p><a href="#" class="btn btn-primary px-4 py-2 text-white">View More</a></p>
+              <p><a href="services.html" class="btn btn-primary px-4 py-2 text-white">View More</a></p>
 
             </div>
 
@@ -771,12 +776,13 @@ staff, committed to there professions</p>
           </div>
           <div class="col-md-3">
             <h2 class="footer-heading mb-4">Subscribe Newsletter</h2>
-            <form action="#" method="post">
+            <form action="#" method="post" id="newsletter" novalidate="novalidate"  onsubmit="return NewsForm();">
               <div class="input-group mb-3">
+                <input type="hidden"  name='newsMail' value='email-form' >
                 <input type="text" class="form-control border-secondary text-white bg-transparent"
-                  placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                  placeholder="Enter Email" id="eemail" name="eemail" aria-label="Enter Email" aria-describedby="button-addon2">
                 <div class="input-group-append">
-                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
+                  <input class="btn btn-primary text-white" type="submit" id="button-addon2" value="Send">
                 </div>
               </div>
             </form>
@@ -816,5 +822,54 @@ staff, committed to there professions</p>
     <script src="js/main.js"></script>
 
   </body>
-
+  <script type="text/javascript">
+    	function ContactForm() {
+    		var form = $("#ContactForm")[0];
+    		
+    		var formdata = new FormData(form); {
+    			
+    			$.ajax({
+    				type: 'post',
+    				url: '/contact.php',
+    				data: formdata,
+    				contentType: false,
+    				processData: false,
+    				success: function (response) {
+    					if (response == "success") {
+    						alert("Sent Successfully! \nThank you, We will contact you shortly!");
+    						window.location.reload();
+    					} else {
+    						alert(response);
+    					}
+    				}
+    			});
+    		}
+    		return false;
+      }
+      
+      function NewsForm() {
+    		var form = $("#NewsForm")[0];
+    		
+    		var formdata = new FormData(form); {
+    			
+    			$.ajax({
+    				type: 'post',
+    				url: '/news.php',
+    				data: formdata,
+    				contentType: false,
+    				processData: false,
+    				success: function (response) {
+    					if (response == "success") {
+    						alert("Thank you \n You have successfully signed up to our newsletter");
+    						window.location.reload();
+    					} else {
+    						alert(response);
+    					}
+    				}
+    			});
+    		}
+    		return false;
+    	}
+    
+    </script>
 </html>
