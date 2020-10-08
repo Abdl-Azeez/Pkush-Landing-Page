@@ -30,11 +30,11 @@
 
   </head>
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+  <body data-spy="scroll" data-target="site-navbar-target" data-offset="200">
 
     <!-- <div class="site-wrap"> -->
 
-    <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu site-navbar-target" id="mobileNav">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
           <span class="icon-close2 js-menu-toggle"></span>
@@ -57,17 +57,13 @@
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link" id="home">Home</a></li>
                 <li class="has-children">
-                  <a href="index.html#section-about" class="nav-link">About Us</a>
-                  <ul class="dropdown">
-                    <li><a href="index.html#section-how-it-works" class="nav-link">How It Works</a></li>
-                    <li><a href="index.html#section-our-team" class="nav-link">Our Team</a></li>
-                  </ul>
+                  <a href="index.html#section-about" class="nav-link" id="about">About Us</a>
                 </li>
-                <li><a href="index.html#section-services" class="nav-link">Services</a></li>
-                <li><a href="index.html#section-industries" class="nav-link">Gallery</a></li>
-                <li><a href="index.html#section-contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#section-services" class="nav-link" id="services">Services</a></li>
+                <li><a href="index.html#section-industries" class="nav-link" id="riders">Riders</a></li>
+                <li><a href="index.html#section-contact" class="nav-link" id="contact">Contact</a></li>
                 <li><a href="#" class="nav-link nav-button">Sign in</a></li>
               </ul>
             </nav>

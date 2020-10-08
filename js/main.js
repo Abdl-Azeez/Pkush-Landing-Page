@@ -350,10 +350,32 @@ jQuery(document).ready(function ($) {
       }
     );
 
-    // $("#menu li a[href^='#']").on('click', function(e){
+    // $("#menu li a[href^='#']").on("click", function (e) {
     //   e.preventDefault();
-    //   navToggler.trigger('click');
+    //   navToggler.trigger("click");
     // });
+
+    $("#mobileNav .site-mobile-menu-body li a#home").on("click", function () {
+      window.location = "index.html";
+    });
+    $("#mobileNav .site-mobile-menu-body li a#about").on("click", function () {
+      window.location = "index.html#section-about";
+    });
+    $("#mobileNav .site-mobile-menu-body li a#services").on(
+      "click",
+      function () {
+        window.location = "index.html#section-services";
+      }
+    );
+    $("#mobileNav .site-mobile-menu-body li a#riders").on("click", function () {
+      window.location = "index.html#section-industries";
+    });
+    $("#mobileNav .site-mobile-menu-body li a#contact").on(
+      "click",
+      function () {
+        window.location = "index.html#section-contact";
+      }
+    );
 
     $("body").on("activate.bs.scrollspy", function () {
       // console.log('nice');
